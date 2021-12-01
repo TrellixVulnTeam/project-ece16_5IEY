@@ -1,12 +1,13 @@
 import cv2 as cv
-import mediapipe as mp
+from ECE16Lib import pose
+from ECE16Lib import drawing_utils
 import numpy as np
 
 class Pose:
 
     def __init__(self):
-        self.mpDraw = mp.solutions.drawing_utils
-        self.mpPose = mp.solutions.pose
+        self.mpDraw = drawing_utils
+        self.mpPose = pose
         self.pose = self.mpPose.Pose()
         self.pose_coord = [[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None],[None,None]]
         self.pose_coord = np.array(self.pose_coord)
